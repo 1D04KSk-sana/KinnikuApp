@@ -7,6 +7,8 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -15,6 +17,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.kinniku.ui.theme.Gray
 import com.example.kinniku.ui.theme.MainRed
@@ -103,3 +107,92 @@ fun PreviewInputFormNormal() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun InputFormPass(
+    modifier: Modifier = Modifier,
+    value: String,
+    passwordVisible: Boolean,
+    labelText: String,
+    isError: Boolean = false,
+    supportingText: String,
+    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+    keyboardActions: KeyboardActions = KeyboardActions.Default,
+    onTrailingIconClick: () -> Unit,
+    onValueChange: (String) -> Unit,
+) {
+    OutlinedTextField(
+        value = value,
+        label = {
+            Text(
+                text = labelText,
+                style = SubStyle
+            )
+        },
+        isError = isError,
+        textStyle = MainStyle,
+        colors = TextFieldDefaults.outlinedTextFieldColors(
+            focusedBorderColor = SubRed,
+            unfocusedBorderColor = Gray
+        ),
+        visualTransformation = if (passwordVisible) {
+            VisualTransformation.None
+        } else {
+            PasswordVisualTransformation()
+        },
+        supportingText = {
+            Text(
+                text = supportingText,
+                style = MiniStyle
+            )
+        },
+        trailingIcon = {
+            if (isError) {
+                Icon(
+                    Icons.Filled.Warning,
+                    contentDescription = "エラーアイコン",
+                    tint = MainRed
+                )
+            } else {
+                val image = if (passwordVisible) {
+                    Icons.Filled.Visibility
+                } else {
+                    Icons.Filled.VisibilityOff
+                }
+                Icon(
+                    image,
+                    contentDescription = "パスワード表示非表示アイコン",
+                    modifier = Modifier
+                        .clickable { onTrailingIconClick() },
+                    tint = if (passwordVisible) {
+                        SubRed
+                    } else {
+                        Gray
+                    }
+                )
+            }
+        },
+        singleLine = true,
+        keyboardActions = keyboardActions,
+        keyboardOptions = keyboardOptions,
+        onValueChange = onValueChange,
+        modifier = modifier
+    )
+}
+
+@Preview
+@Composable
+fun  PreviewInputFormPass() {
+    Box(
+        modifier = Modifier.background(White)
+    ) {
+        InputFormPass(
+            value = "preview",
+            passwordVisible = false,
+            labelText = "password",
+            supportingText = "半角英数4～16文字以内",
+            onTrailingIconClick = {},
+            onValueChange = {}
+        )
+    }
+}
