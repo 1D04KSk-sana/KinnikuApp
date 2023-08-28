@@ -1,4 +1,4 @@
-package com.example.kinniku
+package com.example.kinniku.screen
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
