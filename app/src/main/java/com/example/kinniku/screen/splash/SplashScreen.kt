@@ -22,7 +22,9 @@ import com.example.kinniku.ui.theme.SubRed
 fun SplashScreen(
     modifier: Modifier = Modifier
 ) {
-
+    Logo(
+        isVisibleProgress = true
+    )
 }
 
 @Composable
