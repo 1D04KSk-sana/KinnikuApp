@@ -1,10 +1,15 @@
 package com.example.kinniku.screen.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
@@ -12,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.kinniku.ui.theme.Gray
+import com.example.kinniku.ui.theme.MainRed
 import com.example.kinniku.ui.theme.MainStyle
 import com.example.kinniku.ui.theme.MiniStyle
 import com.example.kinniku.ui.theme.SubRed
@@ -53,7 +59,25 @@ fun InputFormNormal(
                 style = MiniStyle
             )
         },
-        trailingIcon = {},
+        trailingIcon = {
+            if (isError) {
+                Icon(
+                    Icons.Filled.Warning,
+                    contentDescription = "エラーアイコン",
+                    tint = MainRed
+                )
+            } else {
+                if (value.isNotBlank()) {
+                    Icon(
+                        Icons.Filled.Clear,
+                        contentDescription = "一括クリアボタン",
+                        modifier = modifier
+                            .clickable { onTrailingIconClick() },
+                        tint = Gray
+                    )
+                }
+            }
+        },
         keyboardActions = keyboardActions,
         keyboardOptions = keyboardOptions,
         singleLine = true,
@@ -78,3 +102,4 @@ fun PreviewInputFormNormal() {
         )
     }
 }
+
