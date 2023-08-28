@@ -67,7 +67,7 @@ fun LoginScreenContent(
                 modifier = Modifier
                     .padding(top = 30.dp)
             )
-            
+
         }
     }
 }
