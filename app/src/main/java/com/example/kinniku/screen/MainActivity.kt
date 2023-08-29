@@ -15,8 +15,10 @@ import com.example.kinniku.screen.calendar.CalendarScreen
 import com.example.kinniku.screen.login.LoginScreen
 import com.example.kinniku.screen.splash.SplashScreen
 import com.example.kinniku.ui.theme.KinnikuTheme
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : ComponentActivity() {
+
     // バインディングクラスの変数
     private lateinit var binding: ActivityMainBinding
 
