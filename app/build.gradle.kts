@@ -69,4 +69,7 @@ dependencies {
 
     //Icon
     implementation("androidx.compose.material:material-icons-extended")
+
+    //Calendar
+    implementation("com.kizitonwose.calendar:compose")
 }
