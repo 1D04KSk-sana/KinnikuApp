@@ -8,4 +8,7 @@ plugins {
     
     //FireStore
     id("com.google.gms.google-services") version "4.3.15" apply false
+
+    //hilt
+    id("com.google.dagger.hilt.android") version "2.44" apply false
 }
