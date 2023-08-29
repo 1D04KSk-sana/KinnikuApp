@@ -5,4 +5,7 @@ plugins {
 
     //serialization
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10" apply false
+    
+    //FireStore
+    id("com.google.gms.google-services") version "4.3.15" apply false
 }

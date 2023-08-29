@@ -73,6 +73,10 @@ dependencies {
     //Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 
+    //FireStore
+    implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+
     //Icon
     implementation("androidx.compose.material:material-icons-extended")
 }
