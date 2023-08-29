@@ -105,7 +105,7 @@ fun LoginScreenContent(
                 modifier = Modifier
                     .height(24.dp)
             )
-            
+
         }
     }
 }
@@ -113,5 +113,5 @@ fun LoginScreenContent(
 @Preview
 @Composable
 fun PreviewLoginScreenContent() {
-    LoginScreenContent()
+
 }

@@ -30,6 +30,12 @@ val SubStyle = TextStyle(
     fontSize = 16.sp,
     lineHeight = 24.sp
 )
+val TitleStyle = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Bold,
+    fontSize = 15.sp,
+    lineHeight = 24.sp
+)
 
 val MiniStyle = TextStyle(
     fontFamily = FontFamily.Default,
