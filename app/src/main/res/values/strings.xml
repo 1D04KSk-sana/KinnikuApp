@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Kinniku</string>
+    <string name="app_name">KinnikuCompose</string>
+
+    <!-- 共通 -->
+    <string name="ok">OK</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="cancel">キャンセル</string>
+    <string name="delete">削除</string>
+    <string name="complete">完了</string>
+    <string name="close">閉じる</string>
+
+    <!-- ログイン画面-->
+    <string name="login_screen_title">ログイン</string>
+    <string name="login_screen_input_form_id_label">ID</string>
+    <string name="login_screen_input_form_id_supporting_text">半角英数1~15字以内</string>
+    <string name="login_screen_input_form_pw_label">PW</string>
+    <string name="login_screen_input_form_pw_supporting_text">半角英数8~12字以内</string>
+    <string name="login_screen_error_message">IDまたはPWが違います</string>
+    <string name="login_screen_button_title">ログイン</string>
+    <string name="login_screen_forget_id_pw_button_title">ID/PWを忘れた場合</string>
+    <string name="login_screen_register_button_title">会員登録をする</string>
 </resources>
