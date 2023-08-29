@@ -75,7 +75,7 @@ fun InputFormNormal(
                     Icon(
                         Icons.Filled.Clear,
                         contentDescription = "一括クリアボタン",
-                        modifier = modifier
+                        modifier = Modifier
                             .clickable { onTrailingIconClick() },
                         tint = Gray
                     )
@@ -98,7 +98,7 @@ fun PreviewInputFormNormal() {
             .background(White)
     ) {
         InputFormNormal(
-            value = "preview",
+            value = "",
             labelText = "ID",
             supportingText = "半角英数字4～16文字以内",
             onTrailingIconClick = {},
@@ -182,7 +182,7 @@ fun InputFormPass(
 
 @Preview
 @Composable
-fun  PreviewInputFormPass() {
+fun PreviewInputFormPass() {
     Box(
         modifier = Modifier.background(White)
     ) {

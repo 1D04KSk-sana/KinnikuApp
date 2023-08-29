@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.kinniku.ui.theme.MainRed
+import com.example.kinniku.ui.theme.Gray
 import com.example.kinniku.ui.theme.SubRed
 import com.example.kinniku.ui.theme.TitleStyle
 import com.example.kinniku.ui.theme.White
@@ -24,8 +24,8 @@ fun MainButton(
             .height(44.dp)
             .fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
-            containerColor = MainRed,
-            disabledContainerColor = SubRed
+            containerColor = SubRed,
+            disabledContainerColor = Gray
         ),
         enabled = enabled
     ) {
